@@ -11,6 +11,8 @@ window.addEventListener('load', () => {
 });
 
 function renderTodolist() {
+  // 🔹 Sort todoList by date before rendering
+  todoList.sort((a, b) => new Date(a.date) - new Date(b.date));
   let todoListHTML = '';
   for (let i = 0; i < todoList.length; i++) {
     const name = todoList[i].name;
@@ -50,3 +52,4 @@ function addTodo() {
   inputElement.value = '';
   dueDate.value = '';
 }
+
